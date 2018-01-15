@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Ranzhi自动化测试报告</title>
+    <meta name="generator" content="HtmlTestRunner 0.8.4"/>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    
+<style type="text/css" media="screen">
+
+/* -- css div popup ------------------------------------------------------------------------ */
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #99CCFF;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 10pt;
+    width: 500px;
+}
+
+/* -- report ------------------------------------------------------------------------ */
+
+#show_detail_line .label {
+    font-size: 85%;
+    cursor: pointer;
+}
+
+#show_detail_line {
+    margin: 2em auto 1em auto;
+}
+
+#total_row  { font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+</style>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class="container">
+    <div class='heading'>
+<h1>Ranzhi自动化测试报告</h1>
+<p><strong>Start Time:</strong> 2017-11-26 17:49:19</p>
+<p><strong>Duration:</strong> 0:01:42.830882</p>
+<p><strong>Status:</strong> <span class="text text-danger">Failure <strong>1</strong></span></p>
+
+<p class='description'>测试详情</p>
+</div>
+
+
+    
+<p id='show_detail_line'>
+<span class="label label-primary" onclick="showCase(0)">Summary</span>
+<span class="label label-danger" onclick="showCase(1)">Failed</span>
+<span class="label label-default" onclick="showCase(2)">All</span>
+</p>
+<table id='result_table' class="table">
+    <thead>
+        <tr id='header_row'>
+            <th>Test Group/Test case</td>
+            <th>Count</td>
+            <th>Pass</td>
+            <th>Fail</td>
+            <th>Error</td>
+            <th>View</td>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr class='text text-danger'>
+    <td>ranzhi_test_adduser.RanzhiTestAdduser</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='text text-success'>
+    <td class='text text-danger'><div class='testcase'>test_adduser</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        fail</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: [2017-11-26 17:49:49,762]-[log.py]-INFO:点击后台管理
+[2017-11-26 17:49:49,949]-[log.py]-INFO:点击组织
+[2017-11-26 17:49:52,041]-[log.py]-INFO:点击添加成员
+[2017-11-26 17:49:52,766]-[log.py]-INFO:输入用户名，真实姓名
+[2017-11-26 17:49:53,282]-[log.py]-INFO:选择性别
+[2017-11-26 17:49:53,284]-[log.py]-INFO:选择部门，角色
+[2017-11-26 17:49:53,431]-[log.py]-INFO:输入密码，重复密码，邮箱
+[2017-11-26 17:49:53,598]-[log.py]-INFO:点击保存
+[2017-11-26 17:49:54,662]-[log.py]-INFO:获取url
+[2017-11-26 17:49:55,748]-[log.py]-INFO:获取用户名错误提示文本
+[2017-11-26 17:49:55,768]-[log.py]-INFO:获取姓名错误提示文本
+[2017-11-26 17:49:55,768]-[log.py]-INFO:获取角色错误提示文本
+[2017-11-26 17:49:55,769]-[log.py]-INFO:获取密码错误提示文本
+[2017-11-26 17:49:55,769]-[log.py]-INFO:获取邮箱错误提示文本
+[2017-11-26 17:49:56,880]-[log.py]-INFO:点击后台管理
+[2017-11-26 17:49:56,951]-[log.py]-INFO:点击组织
+[2017-11-26 17:49:59,003]-[log.py]-INFO:点击添加成员
+[2017-11-26 17:49:59,395]-[log.py]-INFO:输入用户名，真实姓名
+[2017-11-26 17:49:59,839]-[log.py]-INFO:选择性别
+[2017-11-26 17:49:59,879]-[log.py]-INFO:选择部门，角色
+[2017-11-26 17:50:00,065]-[log.py]-INFO:输入密码，重复密码，邮箱
+[2017-11-26 17:50:00,271]-[log.py]-INFO:点击保存
+[2017-11-26 17:50:01,352]-[log.py]-INFO:获取url
+[2017-11-26 17:50:02,421]-[log.py]-INFO:获取用户名错误提示文本
+[2017-11-26 17:50:02,446]-[log.py]-INFO:获取姓名错误提示文本
+[2017-11-26 17:50:02,447]-[log.py]-INFO:获取角色错误提示文本
+[2017-11-26 17:50:02,448]-[log.py]-INFO:获取密码错误提示文本
+[2017-11-26 17:50:02,449]-[log.py]-INFO:获取邮箱错误提示文本
+[2017-11-26 17:50:03,575]-[log.py]-INFO:点击后台管理
+[2017-11-26 17:50:03,646]-[log.py]-INFO:点击组织
+[2017-11-26 17:50:05,710]-[log.py]-INFO:点击添加成员
+[2017-11-26 17:50:06,105]-[log.py]-INFO:输入用户名，真实姓名
+[2017-11-26 17:50:06,573]-[log.py]-INFO:选择性别
+[2017-11-26 17:50:06,623]-[log.py]-INFO:选择部门，角色
+[2017-11-26 17:50:06,849]-[log.py]-INFO:输入密码，重复密码，邮箱
+[2017-11-26 17:50:07,048]-[log.py]-INFO:点击保存
+[2017-11-26 17:50:08,114]-[log.py]-INFO:获取url
+[2017-11-26 17:50:09,199]-[log.py]-INFO:获取用户名错误提示文本
+[2017-11-26 17:50:09,200]-[log.py]-INFO:获取姓名错误提示文本
+[2017-11-26 17:50:09,222]-[log.py]-INFO:获取角色错误提示文本
+[2017-11-26 17:50:09,223]-[log.py]-INFO:获取密码错误提示文本
+[2017-11-26 17:50:09,224]-[log.py]-INFO:获取邮箱错误提示文本
+[2017-11-26 17:50:10,354]-[log.py]-INFO:点击后台管理
+[2017-11-26 17:50:10,422]-[log.py]-INFO:点击组织
+[2017-11-26 17:50:12,477]-[log.py]-INFO:点击添加成员
+[2017-11-26 17:50:12,849]-[log.py]-INFO:输入用户名，真实姓名
+[2017-11-26 17:50:13,328]-[log.py]-INFO:选择性别
+[2017-11-26 17:50:13,378]-[log.py]-INFO:选择部门，角色
+[2017-11-26 17:50:13,535]-[log.py]-INFO:输入密码，重复密码，邮箱
+[2017-11-26 17:50:13,764]-[log.py]-INFO:点击保存
+[2017-11-26 17:50:14,834]-[log.py]-INFO:获取url
+[2017-11-26 17:50:15,940]-[log.py]-INFO:获取用户名错误提示文本
+[2017-11-26 17:50:15,941]-[log.py]-INFO:获取姓名错误提示文本
+[2017-11-26 17:50:15,941]-[log.py]-INFO:获取角色错误提示文本
+[2017-11-26 17:50:15,966]-[log.py]-INFO:获取密码错误提示文本
+[2017-11-26 17:50:15,967]-[log.py]-INFO:获取邮箱错误提示文本
+[2017-11-26 17:50:17,071]-[log.py]-INFO:点击后台管理
+[2017-11-26 17:50:17,144]-[log.py]-INFO:点击组织
+[2017-11-26 17:50:19,214]-[log.py]-INFO:点击添加成员
+[2017-11-26 17:50:19,598]-[log.py]-INFO:输入用户名，真实姓名
+[2017-11-26 17:50:20,066]-[log.py]-INFO:选择性别
+[2017-11-26 17:50:20,104]-[log.py]-INFO:选择部门，角色
+[2017-11-26 17:50:20,301]-[log.py]-INFO:输入密码，重复密码，邮箱
+[2017-11-26 17:50:20,499]-[log.py]-INFO:点击保存
+[2017-11-26 17:50:21,566]-[log.py]-INFO:获取url
+[2017-11-26 17:50:22,651]-[log.py]-INFO:获取用户名错误提示文本
+[2017-11-26 17:50:22,652]-[log.py]-INFO:获取姓名错误提示文本
+[2017-11-26 17:50:22,652]-[log.py]-INFO:获取角色错误提示文本
+[2017-11-26 17:50:22,653]-[log.py]-INFO:获取密码错误提示文本
+[2017-11-26 17:50:22,678]-[log.py]-INFO:获取邮箱错误提示文本
+[2017-11-26 17:50:23,787]-[log.py]-INFO:点击后台管理
+[2017-11-26 17:50:23,855]-[log.py]-INFO:点击组织
+[2017-11-26 17:50:25,932]-[log.py]-INFO:点击添加成员
+[2017-11-26 17:50:26,326]-[log.py]-INFO:输入用户名，真实姓名
+[2017-11-26 17:50:26,828]-[log.py]-INFO:选择性别
+[2017-11-26 17:50:26,876]-[log.py]-INFO:选择部门，角色
+[2017-11-26 17:50:27,060]-[log.py]-INFO:输入密码，重复密码，邮箱
+[2017-11-26 17:50:27,255]-[log.py]-INFO:点击保存
+[2017-11-26 17:50:28,323]-[log.py]-INFO:获取url
+[2017-11-26 17:50:29,404]-[log.py]-INFO:获取用户名错误提示文本
+[2017-11-26 17:50:29,405]-[log.py]-INFO:获取姓名错误提示文本
+[2017-11-26 17:50:29,406]-[log.py]-INFO:获取角色错误提示文本
+[2017-11-26 17:50:29,406]-[log.py]-INFO:获取密码错误提示文本
+[2017-11-26 17:50:29,430]-[log.py]-INFO:获取邮箱错误提示文本
+[2017-11-26 17:50:30,545]-[log.py]-INFO:点击后台管理
+[2017-11-26 17:50:30,600]-[log.py]-INFO:点击组织
+[2017-11-26 17:50:32,645]-[log.py]-INFO:点击添加成员
+[2017-11-26 17:50:33,051]-[log.py]-INFO:输入用户名，真实姓名
+[2017-11-26 17:50:33,484]-[log.py]-INFO:选择性别
+[2017-11-26 17:50:33,526]-[log.py]-INFO:选择部门，角色
+[2017-11-26 17:50:33,710]-[log.py]-INFO:输入密码，重复密码，邮箱
+[2017-11-26 17:50:33,854]-[log.py]-INFO:点击保存
+[2017-11-26 17:50:34,909]-[log.py]-INFO:获取url
+[2017-11-26 17:50:35,971]-[log.py]-INFO:获取用户名错误提示文本
+[2017-11-26 17:50:35,971]-[log.py]-INFO:获取姓名错误提示文本
+[2017-11-26 17:50:35,972]-[log.py]-INFO:获取角色错误提示文本
+[2017-11-26 17:50:35,973]-[log.py]-INFO:获取密码错误提示文本
+[2017-11-26 17:50:35,973]-[log.py]-INFO:获取邮箱错误提示文本
+[2017-11-26 17:50:37,108]-[log.py]-INFO:点击后台管理
+[2017-11-26 17:50:37,158]-[log.py]-INFO:点击组织
+[2017-11-26 17:50:39,222]-[log.py]-INFO:点击添加成员
+[2017-11-26 17:50:39,746]-[log.py]-INFO:输入用户名，真实姓名
+[2017-11-26 17:50:40,183]-[log.py]-INFO:选择性别
+[2017-11-26 17:50:40,241]-[log.py]-INFO:选择部门，角色
+[2017-11-26 17:50:40,433]-[log.py]-INFO:输入密码，重复密码，邮箱
+[2017-11-26 17:50:40,610]-[log.py]-INFO:点击保存
+[2017-11-26 17:50:41,655]-[log.py]-INFO:获取url
+[2017-11-26 17:50:42,784]-[log.py]-INFO:获取用户名错误提示文本
+[2017-11-26 17:50:42,812]-[log.py]-INFO:获取姓名错误提示文本
+[2017-11-26 17:50:42,813]-[log.py]-INFO:获取角色错误提示文本
+[2017-11-26 17:50:42,814]-[log.py]-INFO:获取密码错误提示文本
+[2017-11-26 17:50:42,814]-[log.py]-INFO:获取邮箱错误提示文本
+[2017-11-26 17:50:43,924]-[log.py]-INFO:点击后台管理
+[2017-11-26 17:50:43,983]-[log.py]-INFO:点击组织
+[2017-11-26 17:50:46,042]-[log.py]-INFO:点击添加成员
+[2017-11-26 17:50:46,361]-[log.py]-INFO:输入用户名，真实姓名
+[2017-11-26 17:50:46,722]-[log.py]-INFO:选择性别
+[2017-11-26 17:50:46,766]-[log.py]-INFO:选择部门，角色
+[2017-11-26 17:50:46,945]-[log.py]-INFO:输入密码，重复密码，邮箱
+[2017-11-26 17:50:47,096]-[log.py]-INFO:点击保存
+[2017-11-26 17:50:48,145]-[log.py]-INFO:获取url
+[2017-11-26 17:50:49,220]-[log.py]-INFO:获取用户名错误提示文本
+[2017-11-26 17:50:49,243]-[log.py]-INFO:获取姓名错误提示文本
+[2017-11-26 17:50:49,244]-[log.py]-INFO:获取角色错误提示文本
+[2017-11-26 17:50:49,244]-[log.py]-INFO:获取密码错误提示文本
+[2017-11-26 17:50:49,245]-[log.py]-INFO:获取邮箱错误提示文本
+[2017-11-26 17:50:50,354]-[log.py]-INFO:点击后台管理
+[2017-11-26 17:50:50,427]-[log.py]-INFO:点击组织
+[2017-11-26 17:50:52,496]-[log.py]-INFO:点击添加成员
+[2017-11-26 17:50:52,796]-[log.py]-INFO:输入用户名，真实姓名
+[2017-11-26 17:50:53,183]-[log.py]-INFO:选择性别
+[2017-11-26 17:50:53,226]-[log.py]-INFO:选择部门，角色
+[2017-11-26 17:50:53,439]-[log.py]-INFO:输入密码，重复密码，邮箱
+[2017-11-26 17:50:53,660]-[log.py]-INFO:点击保存
+[2017-11-26 17:50:54,704]-[log.py]-INFO:获取url
+[2017-11-26 17:50:55,794]-[log.py]-INFO:获取用户名错误提示文本
+[2017-11-26 17:50:55,794]-[log.py]-INFO:获取姓名错误提示文本
+[2017-11-26 17:50:55,795]-[log.py]-INFO:获取角色错误提示文本
+[2017-11-26 17:50:55,796]-[log.py]-INFO:获取密码错误提示文本
+[2017-11-26 17:50:55,796]-[log.py]-INFO:获取邮箱错误提示文本
+[2017-11-26 17:50:56,932]-[log.py]-INFO:点击后台管理
+[2017-11-26 17:50:56,997]-[log.py]-INFO:点击组织
+[2017-11-26 17:50:59,063]-[log.py]-INFO:点击添加成员
+[2017-11-26 17:50:59,382]-[log.py]-INFO:输入用户名，真实姓名
+[2017-11-26 17:50:59,817]-[log.py]-INFO:选择性别
+[2017-11-26 17:50:59,868]-[log.py]-INFO:选择部门，角色
+[2017-11-26 17:51:00,106]-[log.py]-INFO:输入密码，重复密码，邮箱
+[2017-11-26 17:51:00,279]-[log.py]-INFO:点击保存
+[2017-11-26 17:51:01,332]-[log.py]-INFO:获取url
+[2017-11-26 17:51:02,439]-[log.py]-INFO:获取用户名错误提示文本
+[2017-11-26 17:51:02,464]-[log.py]-INFO:获取姓名错误提示文本
+[2017-11-26 17:51:02,465]-[log.py]-INFO:获取角色错误提示文本
+[2017-11-26 17:51:02,466]-[log.py]-INFO:获取密码错误提示文本
+[2017-11-26 17:51:02,467]-[log.py]-INFO:获取邮箱错误提示文本
+Traceback (most recent call last):
+  File "C:\Users\hzpower\PycharmProjects\ranzhi39\cases1\ranzhi_test_adduser.py", line 53, in test_adduser
+    name,'无效测试用例失败，预期为：'+data['exception'])
+AssertionError: '用户名不能为空。;用户名应当为字母或数字的组合，至少三位' not found in '用户名已经有zzz这条记录了。' : 无效测试用例失败，预期为：用户名已经有zzz这条记录了
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+    </tbody>
+    <tfoot>
+        <tr id='total_row'>
+            <td>Total</td>
+            <td>1</td>
+            <td class="text text-success">0</td>
+            <td class="text text-danger">1</td>
+            <td class="text text-warning">0</td>
+            <td>&nbsp;</td>
+        </tr>
+    </tfoot>
+</table>
+
+    <div id='ending'>&nbsp;</div>
+</div>
+
+</body>
+</html>

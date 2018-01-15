@@ -1,0 +1,9 @@
+1514968126821	geckodriver	INFO	geckodriver 0.18.0
+1514968126827	geckodriver	INFO	Listening on 127.0.0.1:6898
+1514968128307	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args ["-marionette"]
+1514968143390	Marionette	INFO	Listening on port 6906
+1514968144157	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 4356] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1514968162161	geckodriver	INFO	geckodriver 0.18.0
+1514968162167	geckodriver	INFO	Listening on 127.0.0.1:6995
+1514968164692	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args ["-marionette"]

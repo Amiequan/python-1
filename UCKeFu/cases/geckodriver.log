@@ -1,0 +1,29 @@
+1514466138717	geckodriver	INFO	geckodriver 0.18.0
+1514466138724	geckodriver	INFO	Listening on 127.0.0.1:22288
+1514466140758	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args ["-marionette"]
+1514466146480	Marionette	INFO	Listening on port 22294
+1514466146789	Marionette	WARN	TLS certificate errors will be ignored for this session
+1514466708831	geckodriver	INFO	geckodriver 0.18.0
+1514466708838	geckodriver	INFO	Listening on 127.0.0.1:22967
+1514466710869	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args ["-marionette"]
+1514466716551	Marionette	INFO	Listening on port 22976
+1514466716887	Marionette	WARN	TLS certificate errors will be ignored for this session
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+[Child 3808] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1514466748216	geckodriver	INFO	geckodriver 0.18.0
+1514466748222	geckodriver	INFO	Listening on 127.0.0.1:23067
+1514466750261	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args ["-marionette"]
+1514466756328	Marionette	INFO	Listening on port 23082
+1514466756743	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8080/im/4028838b5ac815e3015ac81645f90000.html, line 112: SyntaxError: unterminated string literal
+JavaScript error: http://localhost:8080/im/4028838b5ac815e3015ac81645f90000.html, line 112: SyntaxError: unterminated string literal
+1514466836882	geckodriver	INFO	geckodriver 0.18.0
+1514466836891	geckodriver	INFO	Listening on 127.0.0.1:23296
+1514466838954	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args ["-marionette"]
+1514466845332	Marionette	INFO	Listening on port 23303
+1514466845552	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:8080/im/4028838b5ac815e3015ac81645f90000.html, line 112: SyntaxError: unterminated string literal
+JavaScript error: http://localhost:8080/im/4028838b5ac815e3015ac81645f90000.html, line 112: SyntaxError: unterminated string literal

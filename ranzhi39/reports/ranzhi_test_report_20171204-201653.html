@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Ranzhi自动化测试报告</title>
+    <meta name="generator" content="HtmlTestRunner 0.8.4"/>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    
+<style type="text/css" media="screen">
+
+/* -- css div popup ------------------------------------------------------------------------ */
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #99CCFF;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 10pt;
+    width: 500px;
+}
+
+/* -- report ------------------------------------------------------------------------ */
+
+#show_detail_line .label {
+    font-size: 85%;
+    cursor: pointer;
+}
+
+#show_detail_line {
+    margin: 2em auto 1em auto;
+}
+
+#total_row  { font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+</style>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class="container">
+    <div class='heading'>
+<h1>Ranzhi自动化测试报告</h1>
+<p><strong>Start Time:</strong> 2017-12-04 20:16:53</p>
+<p><strong>Duration:</strong> 0:01:27.804022</p>
+<p><strong>Status:</strong> <span class="text text-success">Pass <strong>2</strong></span> <span class="text text-warning">Error <strong>3</strong></span></p>
+
+<p class='description'>测试详情</p>
+</div>
+
+
+    
+<p id='show_detail_line'>
+<span class="label label-primary" onclick="showCase(0)">Summary</span>
+<span class="label label-danger" onclick="showCase(1)">Failed</span>
+<span class="label label-default" onclick="showCase(2)">All</span>
+</p>
+<table id='result_table' class="table">
+    <thead>
+        <tr id='header_row'>
+            <th>Test Group/Test case</td>
+            <th>Count</td>
+            <th>Pass</td>
+            <th>Fail</td>
+            <th>Error</td>
+            <th>View</td>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr class='text text-warning'>
+    <td>ranzhi_test_adduser.RanzhiTestAdduser</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='text text-success'>
+    <td class='text text-warning'><div class='testcase'>test_adduser</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        error</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: Traceback (most recent call last):
+  File "C:\Users\hzpower\PycharmProjects\ranzhi39\cases\ranzhi_test_adduser.py", line 45, in test_adduser
+    ranzhilogin.adduser(data)
+  File "C:\Users\hzpower\PycharmProjects\ranzhi39\pages\ranzhi_adduser_page.py", line 33, in adduser
+    log.info('点击后台管理')
+  File "C:\Users\hzpower\PycharmProjects\ranzhi39\base\log.py", line 46, in info
+    self._console('info',message)
+  File "C:\Users\hzpower\PycharmProjects\ranzhi39\base\log.py", line 19, in _console
+    fh = logging.FileHandler(self.logname,'a',encoding='utf8')
+  File "C:\Python34\lib\logging\__init__.py", line 1006, in __init__
+    StreamHandler.__init__(self, self._open())
+  File "C:\Python34\lib\logging\__init__.py", line 1035, in _open
+    return open(self.baseFilename, self.mode, encoding=self.encoding)
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\hzpower\\PycharmProjects\\logs\\2017_12_04.logs'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='text text-warning'>
+    <td>ranzhi_test_docs.RanzhiTestDocs</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td>2</td>
+    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c2',2)">Detail</a></td>
+</tr>
+
+<tr id='ft2.1' class='text text-success'>
+    <td class='text text-warning'><div class='testcase'>test1_docs</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        error</a>
+
+    <div id='div_ft2.1' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1: Traceback (most recent call last):
+  File "C:\Users\hzpower\PycharmProjects\ranzhi39\cases\ranzhi_test_docs.py", line 38, in test1_docs
+    ranzhidocs.docs(data)
+  File "C:\Users\hzpower\PycharmProjects\ranzhi39\pages\ranzhi_docs.py", line 50, in docs
+    log.info('点击文档')
+  File "C:\Users\hzpower\PycharmProjects\ranzhi39\base\log.py", line 46, in info
+    self._console('info',message)
+  File "C:\Users\hzpower\PycharmProjects\ranzhi39\base\log.py", line 19, in _console
+    fh = logging.FileHandler(self.logname,'a',encoding='utf8')
+  File "C:\Python34\lib\logging\__init__.py", line 1006, in __init__
+    StreamHandler.__init__(self, self._open())
+  File "C:\Python34\lib\logging\__init__.py", line 1035, in _open
+    return open(self.baseFilename, self.mode, encoding=self.encoding)
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\hzpower\\PycharmProjects\\logs\\2017_12_04.logs'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.2' class='text text-success'>
+    <td class='text text-warning'><div class='testcase'>test2_adddoc</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.2')" >
+        error</a>
+
+    <div id='div_ft2.2' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.2: Traceback (most recent call last):
+  File "C:\Users\hzpower\PycharmProjects\ranzhi39\cases\ranzhi_test_docs.py", line 60, in test2_adddoc
+    ranzhiadddoc.adddoc(data)
+  File "C:\Users\hzpower\PycharmProjects\ranzhi39\pages\ranzhi_docs.py", line 139, in adddoc
+    log.info('点击文档')
+  File "C:\Users\hzpower\PycharmProjects\ranzhi39\base\log.py", line 46, in info
+    self._console('info',message)
+  File "C:\Users\hzpower\PycharmProjects\ranzhi39\base\log.py", line 19, in _console
+    fh = logging.FileHandler(self.logname,'a',encoding='utf8')
+  File "C:\Python34\lib\logging\__init__.py", line 1006, in __init__
+    StreamHandler.__init__(self, self._open())
+  File "C:\Python34\lib\logging\__init__.py", line 1035, in _open
+    return open(self.baseFilename, self.mode, encoding=self.encoding)
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\hzpower\\PycharmProjects\\logs\\2017_12_04.logs'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='text text-success'>
+    <td>ranzhi_test_login.RanzhiTestLogin</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>test_login</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: [2017-12-04 20:17:41,625]-[log.py]-INFO:输入用户名
+[2017-12-04 20:17:41,792]-[log.py]-INFO:输入密码
+[2017-12-04 20:17:41,947]-[log.py]-INFO:登录然之协同
+[2017-12-04 20:17:43,998]-[log.py]-INFO:输入用户名
+[2017-12-04 20:17:44,108]-[log.py]-INFO:输入密码
+[2017-12-04 20:17:44,168]-[log.py]-INFO:登录然之协同
+[2017-12-04 20:17:46,194]-[log.py]-INFO:输入用户名
+[2017-12-04 20:17:46,287]-[log.py]-INFO:输入密码
+[2017-12-04 20:17:46,351]-[log.py]-INFO:登录然之协同
+[2017-12-04 20:17:48,380]-[log.py]-INFO:输入用户名
+[2017-12-04 20:17:48,472]-[log.py]-INFO:输入密码
+[2017-12-04 20:17:48,537]-[log.py]-INFO:登录然之协同
+[2017-12-04 20:17:50,559]-[log.py]-INFO:输入用户名
+[2017-12-04 20:17:50,653]-[log.py]-INFO:输入密码
+[2017-12-04 20:17:50,725]-[log.py]-INFO:登录然之协同
+[2017-12-04 20:17:52,749]-[log.py]-INFO:输入用户名
+[2017-12-04 20:17:52,826]-[log.py]-INFO:输入密码
+[2017-12-04 20:17:52,900]-[log.py]-INFO:登录然之协同
+[2017-12-04 20:17:54,925]-[log.py]-INFO:输入用户名
+[2017-12-04 20:17:55,029]-[log.py]-INFO:输入密码
+[2017-12-04 20:17:55,097]-[log.py]-INFO:登录然之协同
+[2017-12-04 20:17:57,128]-[log.py]-INFO:输入用户名
+[2017-12-04 20:17:57,237]-[log.py]-INFO:输入密码
+[2017-12-04 20:17:57,306]-[log.py]-INFO:登录然之协同
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='text text-success'>
+    <td>ranzhi_test_project.RanzhiTestProject</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>test_adduser</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: [2017-12-04 20:17:41,625]-[log.py]-INFO:输入用户名
+[2017-12-04 20:17:41,792]-[log.py]-INFO:输入密码
+[2017-12-04 20:17:41,947]-[log.py]-INFO:登录然之协同
+[2017-12-04 20:17:43,998]-[log.py]-INFO:输入用户名
+[2017-12-04 20:17:44,108]-[log.py]-INFO:输入密码
+[2017-12-04 20:17:44,168]-[log.py]-INFO:登录然之协同
+[2017-12-04 20:17:46,194]-[log.py]-INFO:输入用户名
+[2017-12-04 20:17:46,287]-[log.py]-INFO:输入密码
+[2017-12-04 20:17:46,351]-[log.py]-INFO:登录然之协同
+[2017-12-04 20:17:48,380]-[log.py]-INFO:输入用户名
+[2017-12-04 20:17:48,472]-[log.py]-INFO:输入密码
+[2017-12-04 20:17:48,537]-[log.py]-INFO:登录然之协同
+[2017-12-04 20:17:50,559]-[log.py]-INFO:输入用户名
+[2017-12-04 20:17:50,653]-[log.py]-INFO:输入密码
+[2017-12-04 20:17:50,725]-[log.py]-INFO:登录然之协同
+[2017-12-04 20:17:52,749]-[log.py]-INFO:输入用户名
+[2017-12-04 20:17:52,826]-[log.py]-INFO:输入密码
+[2017-12-04 20:17:52,900]-[log.py]-INFO:登录然之协同
+[2017-12-04 20:17:54,925]-[log.py]-INFO:输入用户名
+[2017-12-04 20:17:55,029]-[log.py]-INFO:输入密码
+[2017-12-04 20:17:55,097]-[log.py]-INFO:登录然之协同
+[2017-12-04 20:17:57,128]-[log.py]-INFO:输入用户名
+[2017-12-04 20:17:57,237]-[log.py]-INFO:输入密码
+[2017-12-04 20:17:57,306]-[log.py]-INFO:登录然之协同
+[2017-12-04 20:18:12,008]-[log.py]-INFO:点击项目
+[2017-12-04 20:18:13,127]-[log.py]-INFO:点击添加区块
+[2017-12-04 20:18:15,440]-[log.py]-INFO:输入任务区块名称
+[2017-12-04 20:18:15,614]-[log.py]-INFO:编辑外观
+[2017-12-04 20:18:15,774]-[log.py]-INFO:编辑类型
+[2017-12-04 20:18:16,000]-[log.py]-INFO:编辑数量
+[2017-12-04 20:18:16,116]-[log.py]-INFO:编辑排序
+[2017-12-04 20:18:16,293]-[log.py]-INFO:编辑任务状态
+[2017-12-04 20:18:16,451]-[log.py]-INFO:点击保存
+[2017-12-04 20:18:16,518]-[log.py]-INFO:跳出最外层框架
+[2017-12-04 20:18:16,639]-[log.py]-INFO:点击项目
+[2017-12-04 20:18:17,692]-[log.py]-INFO:点击添加区块
+[2017-12-04 20:18:20,025]-[log.py]-INFO:编辑外观
+[2017-12-04 20:18:20,137]-[log.py]-INFO:编辑状态
+[2017-12-04 20:18:20,296]-[log.py]-INFO:编辑数量
+[2017-12-04 20:18:20,465]-[log.py]-INFO:编辑排序
+[2017-12-04 20:18:20,610]-[log.py]-INFO:点击保存
+[2017-12-04 20:18:20,655]-[log.py]-INFO:跳出最外层框架
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+    </tbody>
+    <tfoot>
+        <tr id='total_row'>
+            <td>Total</td>
+            <td>5</td>
+            <td class="text text-success">2</td>
+            <td class="text text-danger">0</td>
+            <td class="text text-warning">3</td>
+            <td>&nbsp;</td>
+        </tr>
+    </tfoot>
+</table>
+
+    <div id='ending'>&nbsp;</div>
+</div>
+
+</body>
+</html>
