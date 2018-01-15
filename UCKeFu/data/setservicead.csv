@@ -1,0 +1,9 @@
+admg,name,weight,adtype,hinttext,address,adtext
+访客入口（技能组窗口）,访客入口1,2,文本,欢迎来访1,http://jmeter.apache.com,访客广告内容
+邀请框（询问窗口）,邀请框1,1,文本,优客服诚邀您进行对话服务1,http://baidu.com,邀请广告内容
+欢迎提示（对话窗口）,欢迎提示窗口1,4,文本,您好!1,http://www.ecogd.edu.cn/pgks,欢迎广告内容
+形象展示（对话窗口）,形象展示窗口1,3,文本,微笑!1,http://chafen.ntce.cn/,形象广告内容
+访客入口（技能组窗口）,访客入口1,2,图片,欢迎来访2,http://wsbm.sdzk.cn,C:\fakepath\Desert.jpg
+邀请框（询问窗口）,邀请框1,1,图片,优客服诚邀您进行对话服务2,http://jmeter.apache.com,C:\fakepath\Desert.jpg
+欢迎提示（对话窗口）,欢迎提示窗口1,4,图片,您好!2,http://baidu.com,C:\fakepath\Desert.jpg
+形象展示（对话窗口）,形象展示窗口1,3,图片,微笑!2,http://www.ecogd.edu.cn/pgks,C:\fakepath\Desert.jpg

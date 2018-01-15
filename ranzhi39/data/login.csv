@@ -1,0 +1,9 @@
+name,password,casetype
+,,登录失败
+admin,,登录失败
+admin, ,登录失败
+admin,012345,登录失败
+,123456,登录失败
+ ,123456,登录失败
+admin1,123456,登录失败
+admin,123456,登录成功

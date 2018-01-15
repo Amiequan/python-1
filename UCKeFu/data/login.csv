@@ -1,0 +1,6 @@
+name,pwd,casetype
+,123456,登录失败
+admin,123456,登录成功
+admin,,登录失败
+admin,12345,登录失败1
+admin1,123456,登录失败1
